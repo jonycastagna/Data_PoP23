@@ -8,7 +8,7 @@ Animation N=256 (max SSIM=0.1)
 ![image info](./HW_N256/animation.gif)
 
 Animation N=512 (max SSIM=0.3)
-![image info](./HW_N256/animation.gif)
+![image info](./HW_N512/animation.gif)
 
 Animation N=1024 (max SSIM=0.7)
-![image info](./HW_N256/animation.gif)
+![image info](./HW_N1024/animation.gif)
