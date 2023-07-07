@@ -4,11 +4,11 @@ Files to generate the dataset used in PoP23 journal paper.
 
 ![image info](./spectra.png)
 
-Animation N=256
+Animation N=256 (max SSIM=0.1)
 ![image info](./HW_N256/animation.gif)
 
-Animation N=512
+Animation N=512 (max SSIM=0.3)
 ![image info](./HW_N256/animation.gif)
 
-Animation N=1024
+Animation N=1024 (max SSIM=0.7)
 ![image info](./HW_N256/animation.gif)
