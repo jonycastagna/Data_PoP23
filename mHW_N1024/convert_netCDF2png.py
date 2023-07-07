@@ -22,10 +22,11 @@ SAVE_UVW = False
 DTYPE    = 'float32'
 DIR      = 0  # orientation plot (0=> x==horizontal; 1=> z==horizontal). In BOUT++ z is always periodic!
 STIME    = 0 # starting time to save fields
-FTIME    = 201 # starting time to take as last image
-ITIME    = 1  # skip between STIME, FTIME, ITIME
+FTIME    = 3001 # starting time to take as last image
+ITIME    = 10  # skip between STIME, FTIME, ITIME
 NDNS     = 1
-DELT     = 1.0 
+DELT     = 0.1
+TSTART   = 0
 N        = 512
 L        = 50.176 
 delx     = L/N
@@ -212,7 +213,7 @@ phiMin = []
 vortMax = []
 vortMin = []
 for nrun in range(NDNS):
-    newfolder = "HW_data/HW_" + str(nrun) + "/data/"
+    newfolder = "HW_data_singleDNS/HW_" + str(nrun) + "/data/"
     file_path = newfolder + "BOUT.log.0"
     with open(file_path, 'r') as file:
         content = file.read()
@@ -243,7 +244,7 @@ for nrun in range(NDNS):
 
                 gradV_phi = np.sqrt(((cr(Img_phi, 1, 0) - cr(Img_phi, -1, 0))/(2.0*delx))**2 + ((cr(Img_phi, 0, 1) - cr(Img_phi, 0, -1))/(2.0*dely))**2)
 
-                ttime.append(t*DELT)
+                ttime.append(t*DELT + TSTART)
                 E = 0.5*L**2*np.sum(Img_n**2 + gradV_phi**2)
                 Energy.append(E)
                 

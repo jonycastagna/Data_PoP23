@@ -21,9 +21,9 @@ from isoturb import generate_isotropic_turbulence_2d
 SAVE_UVW = False
 DTYPE    = 'float32'
 DIR      = 0  # orientation plot (0=> x==horizontal; 1=> z==horizontal). In BOUT++ z is always periodic!
-STIME    = 101 # starting time to save fields
-FTIME    = 201 # starting time to take as last image
-ITIME    = 1  # skip between STIME, FTIME, ITIME
+STIME    = 1 # starting time to save fields
+FTIME    = 1001 # starting time to take as last image
+ITIME    = 20  # skip between STIME, FTIME, ITIME
 NDNS     = 100
 N        = 512
 L        = 50.176 
@@ -60,9 +60,11 @@ path = "fields"
 isExist = os.path.exists(path)
 if not isExist:
     os.makedirs(path)
-else:
-    cmd = "rm fields/*"
-    os.system(cmd)
+# else:
+#     answer = input("Do you want to cancel previous files [y/N]?")
+#     if (answer=="y"):
+#         os.system("rm fields/*")
+    
 
 
 # run on data
