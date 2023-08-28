@@ -60,9 +60,11 @@ path = "fields"
 isExist = os.path.exists(path)
 if not isExist:
     os.makedirs(path)
-else:
-    cmd = "rm fields/*"
-    os.system(cmd)
+# else:
+#     answer = input("Do you want to cancel previous files [y/N]?")
+#     if (answer=="y"):
+#         os.system("rm fields/*")
+    
 
 
 # run on data

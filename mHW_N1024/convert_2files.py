@@ -9,13 +9,6 @@ from PIL import Image
 from boututils.datafile import DataFile
 from boutdata.collect import collect
 
-# sys.path.insert(n, item) inserts the item at the nth position in the list 
-# (0 at the beginning, 1 after the first element, etc ...)
-sys.path.insert(0, '../../../codes/TurboGenPY/')
-
-from tkespec import compute_tke_spectrum2d
-from isoturb import generate_isotropic_turbulence_2d
-
 
 
 SAVE_UVW = False

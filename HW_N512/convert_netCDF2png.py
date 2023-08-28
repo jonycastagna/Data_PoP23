@@ -25,7 +25,8 @@ STIME    = 0 # starting time to save fields
 FTIME    = 1001 # starting time to take as last image
 ITIME    = 10  # skip between STIME, FTIME, ITIME
 NDNS     = 1
-DELT     = 1.0 
+DELT     = 1.0
+TSTART   = 0
 N        = 512
 L        = 50.176 
 delx     = L/N
@@ -243,7 +244,7 @@ for nrun in range(NDNS):
 
                 gradV_phi = np.sqrt(((cr(Img_phi, 1, 0) - cr(Img_phi, -1, 0))/(2.0*delx))**2 + ((cr(Img_phi, 0, 1) - cr(Img_phi, 0, -1))/(2.0*dely))**2)
 
-                ttime.append(t*DELT)
+                ttime.append(t*DELT + TSTART)
                 E = 0.5*L**2*np.sum(Img_n**2 + gradV_phi**2)
                 Energy.append(E)
                 
